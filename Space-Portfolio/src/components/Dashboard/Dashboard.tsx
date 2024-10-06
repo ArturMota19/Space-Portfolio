@@ -1,12 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+// Imports
 import * as THREE from 'three';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { useNavigate } from 'react-router-dom';
 // Images
 import gasIcon from '/gasIcon.svg'
+import worldIcon from '/worldIcon.svg'
+import rocketIcon from '/rocketIcon.svg'
+import graphIcon from '/graphIcon.svg'
 // Styles
 import s from './Dashboard.module.css';
+
 
 export default function Dashboard() {
   interface GLTF {
@@ -20,6 +26,49 @@ export default function Dashboard() {
   let scene: THREE.Scene;
   let camera: THREE.PerspectiveCamera;
   let controls: OrbitControls;
+  const navigate = useNavigate();
+  const [selectedOption, setSelectedOption] = useState(0);
+  const isAnimatingRef = useRef(false); 
+
+  const arrayOptions = [
+    { 
+      name: 'Abastecer Aeronave', 
+      icon: gasIcon, 
+      text: `<h1 class="${s.wrapperTextH1}">Desenvolver-se é como explorar o vasto universo.</h1>`
+    },
+    { 
+      name: 'Calcular Trajeto', 
+      icon: worldIcon, 
+      text: `<p class="${s.wrapperTextP}">Cada planeta visitado representa uma experiência profissional única, em que aprendi e cresci. As estrelas no céu são os conhecimentos e habilidades que adquiri na minha jornada, iluminando novas possibilidades.</p>` 
+    },
+    { 
+      name: 'Configurar Sistemas', 
+      icon: graphIcon, 
+      text: `<p class="${s.wrapperTextP}">Explorar o desconhecido é o que me motiva. Cada desafio superado, seja em novos projetos ou na implementação de soluções, me leva além dos limites conhecidos.</p>` 
+    },
+    { 
+      name: 'DESBRAVAR', 
+      icon: rocketIcon, 
+      text: `<h1 class="${s.wrapperTextWithoutAnimation}">Bem-vindo(a) à minha jornada de exploração.</h1>` 
+    },
+  ];
+  
+
+  function incrementOption(){
+    if(selectedOption < 3 ){
+      setSelectedOption(selectedOption + 1)
+    }else{
+      isAnimatingRef.current = true;
+      // make an animation on the text
+      const textElement = document.querySelector(`.${s.wrapperText} div`);
+      if (textElement) {
+        textElement.classList.add(s.animateText);
+        setTimeout(() => {
+          navigate("/dashboard")
+        }, 7500); // Duration of the animation
+      }
+    }
+  }
 
   function newScene() {    
     const loader = new GLTFLoader();
@@ -81,7 +130,17 @@ export default function Dashboard() {
     const gltfObject = scene.getObjectByName('Scene');
     if (gltfObject) {
       gltfObject.rotation.y += 0.005;
+      if (isAnimatingRef.current) {
+        gltfObject.position.x += 0.05;
+        gltfObject.traverse((child) => {
+          if (child instanceof THREE.Mesh) {
+            child.material.transparent = true;
+            child.material.opacity -= 0.001;
+          }
+        });
+      }
     }
+    
     requestAnimationFrame(render);
   }
   function main() {
@@ -111,7 +170,6 @@ export default function Dashboard() {
   
 
   useEffect(() => {
-    
     main();
     return () => {
       // if i already have a renderer, dispose it
@@ -121,18 +179,19 @@ export default function Dashboard() {
     };
   }, []);
 
+
+
   return (
     <main>
       <div className={s.buttonDiv}>
-        
-        <button>
-          <img src={gasIcon} alt="Gas Icon" />
-          <p>Abastecer Aeronave</p>
+        <button onClick={() => incrementOption()}>
+          <img src={arrayOptions[selectedOption].icon} alt="CHANGE LATER" />
+          <p>{arrayOptions[selectedOption].name}</p>
         </button>
       </div>
       <section className={s.initialMessageWrapper}>
         <div className={s.wrapperText}>
-          <h1>Desenvolver-se é como desbravar o espaço sideral.</h1>
+            <div dangerouslySetInnerHTML={{ __html: arrayOptions[selectedOption].text || '' }} />
         </div>
       </section>
       <div ref={containerRef} className={s.canvasContainer}></div>
