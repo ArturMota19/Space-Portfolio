@@ -1,0 +1,76 @@
+.initialMessageWrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #17016175;
+  pointer-events: none;
+}
+
+.wrapperText {
+  width: 50%;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.wrapperText h1 {
+  transition: 10s !important;
+  color: #E2E2E2;
+  font-size: 3.5rem;
+  animation: float 5s ease-in-out infinite;
+}
+.buttonDiv{
+  width: 100%;
+  bottom: 5%;
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  button{
+    pointer-events: all !important;
+    width: 20%;
+    max-width: 300px;
+    min-width: 250px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+
+    border-radius: 36px;
+    background-color: transparent;
+
+    border: 1px solid #FB773C;
+    color: #FB773C;
+    font-size: 1.1rem;
+    transition: 1s;
+    &:hover{
+      background-color: #170161;
+      transform: scale(1.1);
+    }
+
+    img{
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
