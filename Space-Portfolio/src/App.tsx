@@ -1,5 +1,6 @@
 // Components
 import Dashboard from "./components/Dashboard/Dashboard";
+import Portfolio from "./components/Portfolio/Portfolio";
 // Images
 
 // Imports
@@ -12,6 +13,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </BrowserRouter>
   );

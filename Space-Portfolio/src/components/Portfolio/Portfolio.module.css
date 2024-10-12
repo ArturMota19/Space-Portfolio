@@ -1,0 +1,11 @@
+.portfolioWrapper{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #180161;
+  color: #FFF;
+}

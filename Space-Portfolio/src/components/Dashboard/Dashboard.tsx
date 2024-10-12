@@ -10,6 +10,7 @@ import gasIcon from '/gasIcon.svg'
 import worldIcon from '/worldIcon.svg'
 import rocketIcon from '/rocketIcon.svg'
 import graphIcon from '/graphIcon.svg'
+import mouseIcon from '/mouseClick.svg'
 // Styles
 import s from './Dashboard.module.css';
 
@@ -58,13 +59,14 @@ export default function Dashboard() {
     if(selectedOption < 3 ){
       setSelectedOption(selectedOption + 1)
     }else{
+      if(isAnimatingRef.current) return
       isAnimatingRef.current = true;
       // make an animation on the text
       const textElement = document.querySelector(`.${s.wrapperText} div`);
       if (textElement) {
         textElement.classList.add(s.animateText);
         setTimeout(() => {
-          navigate("/dashboard")
+          navigate("/portfolio")
         }, 7500); // Duration of the animation
       }
     }
@@ -183,8 +185,12 @@ export default function Dashboard() {
 
   return (
     <main>
+      <div className={s.ambientAbsolut}>
+        <img src={mouseIcon} alt='click icon'/>
+        <p>Ambiente Interativo</p>
+      </div>
       <div className={s.buttonDiv}>
-        <button onClick={() => incrementOption()}>
+        <button disabled={isAnimatingRef.current} onClick={() => incrementOption()}>
           <img src={arrayOptions[selectedOption].icon} alt="CHANGE LATER" />
           <p>{arrayOptions[selectedOption].name}</p>
         </button>

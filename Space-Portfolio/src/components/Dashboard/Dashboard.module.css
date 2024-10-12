@@ -103,3 +103,18 @@
   }
 }
 
+.ambientAbsolut{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  width: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: .5rem;
+  
+  color: #FFF;
+}
+
