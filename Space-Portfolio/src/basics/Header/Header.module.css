@@ -20,31 +20,62 @@
   border-radius: 16px;
   font-size: 1.25rem;
 
-  p{
-    color: #FB773C;
-    cursor: pointer;
+  .eachNavLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
     transition: 1s;
     &:hover{
-      color: #FFF;
       transform: scale(1.1);
     }
-
-    &:hover::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: #FFF;
-      transition: width 0.3s;
+  
+    p{
+      color: #FB773C;
+      cursor: pointer;
+      transition: 1s;
+      &:hover{
+        color: #FFF;
+      }
+  
+      &:hover::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #FFF;
+        transition: width 0.3s;
+      }
+  
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #FB773C;
+        transition: width 0.3s;
+      }
     }
-
-    &::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #FB773C;
-      transition: width 0.3s;
+  }
+}
+.socialLinks{
+  position: absolute;
+  gap: 1.5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 16px;
+  a{
+    color: #FB773C;
+    font-size: 1.5rem;
+    transition: 1s;
+    &:hover{
+      transform: scale(1.1);
+    }
+    img{
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 }
