@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+// @ts-expect-error: GLTFLoader is not typed in the three.js module
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useEffect, useRef } from 'react';
 import s from '../../components/Portfolio/Portfolio.module.css';

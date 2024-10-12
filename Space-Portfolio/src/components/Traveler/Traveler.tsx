@@ -1,9 +1,9 @@
 // Components
-import GalaxyBg from '../../basics/Galaxy/galaxy';
+import GalaxyBg from '../../basics/Galaxy/Galaxy.tsx';
 // Images
 
 // Imports
-import { useEffect, useState, useRef } from 'react';
+
 // Styles
 import s from './Traveler.module.css'
 

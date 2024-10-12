@@ -2,7 +2,9 @@
 // Imports
 import * as THREE from 'three';
 import { useEffect, useRef, useState } from 'react';
+// @ts-expect-error: GLTFLoader is not typed in the three.js module
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+// @ts-expect-error: OrbitControls is not typed in the three.js module
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { useNavigate } from 'react-router-dom';
 // Images
