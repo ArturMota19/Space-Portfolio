@@ -51,3 +51,8 @@
     width: 80px;
   }
 }
+.wrapperSun{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

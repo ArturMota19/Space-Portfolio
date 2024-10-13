@@ -29,9 +29,11 @@ export default function RenderGLTF({path, position, isPlanet=true}:{path: string
         camera.lookAt(gltfObject.position)
         scene.add(gltfObject);
 
-        // const ambientLight = new THREE.AmbientLight(0xffffff, 5);
-        // scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+        if(isPlanet){
+          const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+          scene.add(ambientLight);
+        }
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 8);
         directionalLight.position.set(position[0], position[1], position[2]).normalize();
         scene.add(directionalLight);
 
@@ -46,9 +48,9 @@ export default function RenderGLTF({path, position, isPlanet=true}:{path: string
   function render() {
     renderer.render(scene, camera);
     requestAnimationFrame(render);
-    scene.rotation.y += 0.001;
+    scene.rotation.y += 0.003;
     if(isPlanet){
-      scene.rotation.x += 0.001;
+      scene.rotation.x += 0.003;
     }
 
   }
@@ -86,6 +88,6 @@ export default function RenderGLTF({path, position, isPlanet=true}:{path: string
   }, []);
 
   return (
-    <div ref={containerRef} className={s.galaxyWrapper} />
+    <div ref={containerRef} className={!isPlanet ? s.galaxyWrapper : ''} />
   );
 }

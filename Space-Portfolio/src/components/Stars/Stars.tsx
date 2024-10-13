@@ -12,7 +12,9 @@ import StarsComponent from './StarsComponent';
 export default function Stars() {
   return (
     <section className={s.wrapperStars}>
-      <RenderGLTF path={"star/scene.gltf"} position={[1, 0, 1.75]}/>
+      <div className={s.wrapperSun}>
+        <RenderGLTF path={"star/scene.gltf"} position={[1, 0, 1.75]}/>
+      </div>
       <div className={s.internStars}>
         <h2>Estrelas</h2>
         <div className={s.stars}>
