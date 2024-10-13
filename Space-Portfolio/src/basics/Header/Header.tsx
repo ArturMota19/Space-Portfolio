@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Imports
 import travel from '/travel.svg';
@@ -17,13 +17,28 @@ export default function Header() {
   const [currentTravelIcon, setCurrentTravelIcon] = useState(orangeTravel);
   const [currentStarsIcon, setCurrentStarsIcon] = useState(orangeStars);
   const [currentPlanetIcon, setCurrentPlanetIcon] = useState(orangePlanet);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 80 && isScrolled === false) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className={s.headerWrapper}>
-      <nav className={s.navbar}>
-        <div 
-          className={s.eachNavLink}
-        >
+    <header className={`${s.headerWrapper}`}>
+      <nav className={`${s.navbar} ${isScrolled ? s.scrolled : ''}`}>
+        <div className={s.eachNavLink}>
           <img src={currentTravelIcon} alt='Viajante' className={s.navIcon} />
           <p
             onMouseEnter={() => setCurrentTravelIcon(travel)}
@@ -31,9 +46,7 @@ export default function Header() {
           >Viajante</p>
         </div>
 
-        <div 
-          className={s.eachNavLink}
-        >
+        <div className={s.eachNavLink}>
           <img src={currentStarsIcon} alt='Estrelas' className={s.navIcon} />
           <p
             onMouseEnter={() => setCurrentStarsIcon(stars)}
@@ -41,9 +54,7 @@ export default function Header() {
           >Estrelas</p>
         </div>
 
-        <div 
-          className={s.eachNavLink}
-        >
+        <div className={s.eachNavLink}>
           <img src={currentPlanetIcon} alt='Planetas' className={s.navIcon} />
           <p
             onMouseEnter={() => setCurrentPlanetIcon(planet)}
@@ -62,7 +73,6 @@ export default function Header() {
           <img src={email} alt='Email'/>
         </a>
       </div>
-
     </header>
   );
 }

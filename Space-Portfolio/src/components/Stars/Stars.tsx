@@ -16,14 +16,14 @@ export default function Stars() {
       <div className={s.internStars}>
         <h2>Estrelas</h2>
         <div className={s.stars}>
-          <StarsComponent title="HTML" img="techIcons/html.svg"/>
-          <StarsComponent title="CSS" img="techIcons/css.svg"/>
+          <StarsComponent title="HTML5" img="techIcons/html.svg"/>
+          <StarsComponent title="CSS3" img="techIcons/css.svg"/>
           <StarsComponent title="SASS" img="techIcons/sass.svg"/>
           <StarsComponent title="Tailwind" img="techIcons/tailwind.svg"/>
           <StarsComponent title="JavaScript" img="techIcons/js.svg"/>
-          <StarsComponent title="React" img="techIcons/react.svg"/>
-          <StarsComponent title="Next" img="techIcons/next.svg"/>
-          <StarsComponent title="Node" img="techIcons/node.svg"/>
+          <StarsComponent title="ReactJs" img="techIcons/react.svg"/>
+          <StarsComponent title="NextJs" img="techIcons/next.svg"/>
+          <StarsComponent title="NodeJs" img="techIcons/node.svg"/>
           <StarsComponent title="TypeScript" img="techIcons/typescript.svg"/>
           <StarsComponent title="Python" img="techIcons/python.svg"/>
           <StarsComponent title="Figma" img="techIcons/figma.svg"/>

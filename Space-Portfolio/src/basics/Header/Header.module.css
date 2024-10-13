@@ -13,6 +13,7 @@
   border-bottom: 3px solid #FB773C;
 }
 .navbar{
+  transition: 1s ease-in-out;
   width: 40%;
   padding: 12px;
   display: flex;
@@ -79,4 +80,8 @@
       height: 2.5rem;
     }
   }
+}
+
+.scrolled{
+  background-color: #2d0555;
 }
