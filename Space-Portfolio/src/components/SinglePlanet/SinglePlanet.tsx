@@ -47,7 +47,7 @@ export default function SinglePlanet() {
       });
     } else if (planet === "reis") {
       setPlanetData({
-        img: '',
+        img: '/reisPhoto.jpeg',
         path: "reisPlanet/scene.gltf",
         company: "Reis Softwares",
         time: "Agosto de 2022 até o momento",
