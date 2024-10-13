@@ -11,7 +11,7 @@ import PlanetsComponent from './PlanetsComponent';
 
 export default function Planets() {
   return (
-    <section className={s.wrapperPlanets}>
+    <section id='planets' className={s.wrapperPlanets}>
       <div className={s.internPlanets}>
         <h2>Planetas</h2>
         <PlanetsComponent 

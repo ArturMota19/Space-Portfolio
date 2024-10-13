@@ -40,36 +40,42 @@ export default function Header() {
       <nav className={`${s.navbar} ${isScrolled ? s.scrolled : ''}`}>
         <div className={s.eachNavLink}>
           <img src={currentTravelIcon} alt='Viajante' className={s.navIcon} />
-          <p
-            onMouseEnter={() => setCurrentTravelIcon(travel)}
-            onMouseLeave={() => setCurrentTravelIcon(orangeTravel)}
-          >Viajante</p>
+            <a href="/portfolio#traveler">
+            <p
+              onMouseEnter={() => setCurrentTravelIcon(travel)}
+              onMouseLeave={() => setCurrentTravelIcon(orangeTravel)}
+            >Viajante</p>
+            </a>
         </div>
 
         <div className={s.eachNavLink}>
           <img src={currentStarsIcon} alt='Estrelas' className={s.navIcon} />
-          <p
-            onMouseEnter={() => setCurrentStarsIcon(stars)}
-            onMouseLeave={() => setCurrentStarsIcon(orangeStars)}
-          >Estrelas</p>
+            <a href="/portfolio#stars">
+            <p
+              onMouseEnter={() => setCurrentStarsIcon(stars)}
+              onMouseLeave={() => setCurrentStarsIcon(orangeStars)}
+            >Estrelas</p>
+            </a>
         </div>
 
         <div className={s.eachNavLink}>
           <img src={currentPlanetIcon} alt='Planetas' className={s.navIcon} />
-          <p
-            onMouseEnter={() => setCurrentPlanetIcon(planet)}
-            onMouseLeave={() => setCurrentPlanetIcon(orangePlanet)}
-          >Planetas</p>
+            <a href="/portfolio#planets">
+            <p
+              onMouseEnter={() => setCurrentPlanetIcon(planet)}
+              onMouseLeave={() => setCurrentPlanetIcon(orangePlanet)}
+            >Planetas</p>
+            </a>
         </div>
       </nav>
       <div className={s.socialLinks}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/ArturMota19" target="_blank" rel="noopener noreferrer">
           <img src={github} alt='Github'/>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/artur-mota-913b9a235/" target="_blank" rel="noopener noreferrer">
           <img src={linkedin} alt='Linkedin'/>
         </a>
-        <a href="mailto:example@example.com">
+        <a href="mailto:artur19rodriguesmota@gmail.com">
           <img src={email} alt='Email'/>
         </a>
       </div>
