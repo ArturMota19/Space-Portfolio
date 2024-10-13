@@ -56,3 +56,14 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 1150px){
+  .stars {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+  .wrapperStars h2 {
+    text-align: center;
+    font-size: 3rem;
+  }
+  
+}

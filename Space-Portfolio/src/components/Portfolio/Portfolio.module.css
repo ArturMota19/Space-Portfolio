@@ -15,3 +15,10 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 1150px) {
+  .portfolioWrapper{
+    gap: 1.5rem;
+    padding-bottom: 10rem;
+  }
+}

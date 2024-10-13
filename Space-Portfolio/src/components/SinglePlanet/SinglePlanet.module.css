@@ -1,8 +1,7 @@
-.singlePlanetWrapper{
+.singlePlanetWrapper {
   width: 100%;
   height: auto;
   padding-bottom: 15rem;
-
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -10,7 +9,7 @@
   color: #FFF;
 }
 
-.wrapperIndividualPlanet{
+.wrapperIndividualPlanet {
   width: 90%;
   margin: 0 auto;
   max-width: 1920px;
@@ -20,46 +19,82 @@
   justify-content: center;
   flex-direction: column;
   gap: 16px;
+}
 
-  h1{
-    font-size: 3rem;
-    font-weight: 700;
+.wrapperIndividualPlanet h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.wrapperDownDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.planetInfos {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.planetDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planetInfos h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.planetInfos li,
+.planetInfos p {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.wrapperDownDiv img {
+  width: 50%;
+  height: auto !important;
+  max-height: 40rem;
+  object-fit: cover;
+}
+
+@media (max-width: 1150px) {
+  .wrapperIndividualPlanet {
+    padding-top: 6rem;
+    text-align: center;
   }
-  .wrapperDownDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
 
-    .planetInfos{
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
+  .wrapperIndividualPlanet h1 {
+    font-size: 2rem;
+  }
 
-      .planetDiv{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  .wrapperDownDiv {
+    flex-direction: column;
+    gap: 16px;
+  }
 
-      h2{
-        font-size: 2rem;
-        font-weight: 700;
-      }
+  .planetInfos {
+    width: 100%;
+  }
 
-      li,p{
-        font-size: 1.25rem;
-        font-weight: 400;
-      }
-    }
+  .wrapperDownDiv img {
+    width: 100%;
+    max-height: 20rem;
+  }
 
-    img{
-      width: 50%;
-      height: auto !important;
-      max-height: 40rem;
-      object-fit: cover;
-    }
+  .planetInfos h2 {
+    font-size: 1.5rem;
+  }
+
+  .planetInfos li,
+  .planetInfos p {
+    font-size: 1rem;
   }
 }

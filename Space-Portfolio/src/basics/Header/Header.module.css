@@ -85,3 +85,15 @@
 .scrolled{
   background-color: #2d0555;
 }
+
+@media screen and (max-width: 1150px){
+  .navbar{
+    width: 95%;
+    font-size: .85rem;
+    padding: 12px 4px 12px 4px;
+  }
+  .socialLinks{
+    display: none;
+  }
+  
+}
