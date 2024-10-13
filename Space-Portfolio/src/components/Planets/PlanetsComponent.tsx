@@ -17,7 +17,7 @@ export default function PlanetsComponent({ path, company, time, position, link }
           <h4>{company}</h4>
           <h5>{time}</h5>
         </div>
-        <a href={`/planet/${link}`}>
+        <a href={`/planet${link}`}>
           <button>
             <img src={rocketIcon} alt='Foguete'/>
             <p>EXPLORAR</p>

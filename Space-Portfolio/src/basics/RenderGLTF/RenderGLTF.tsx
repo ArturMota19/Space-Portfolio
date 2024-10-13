@@ -40,6 +40,7 @@ export default function RenderGLTF({path, position, isPlanet=true}:{path: string
       },
       undefined,
       (error: GLTFError) => {
+        console.log(error)
         console.error('Erro no modelo:', error);
       }
     );

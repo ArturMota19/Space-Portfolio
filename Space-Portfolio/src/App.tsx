@@ -1,6 +1,7 @@
 // Components
 import Dashboard from "./components/Dashboard/Dashboard";
 import Portfolio from "./components/Portfolio/Portfolio";
+import SinglePlanet from "./components/SinglePlanet/SinglePlanet";
 // Images
 
 // Imports
@@ -14,6 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/planet" element={<SinglePlanet />} />
       </Routes>
     </BrowserRouter>
   );
