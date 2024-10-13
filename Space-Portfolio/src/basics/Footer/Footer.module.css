@@ -1,0 +1,36 @@
+.footerWrapper{
+  display: none;
+}
+
+@media screen and (max-width: 1150px){
+  .footerWrapper {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #4F1787;
+    height: 48px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0; 
+    z-index: 100;
+  
+    .socialLinks{
+      width: 90%;
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+  
+      img{
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        transition: 1s;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+      
+    }
+  }
+}

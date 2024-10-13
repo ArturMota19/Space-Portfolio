@@ -1,12 +1,14 @@
 // Components
 import Header from "../../basics/Header/Header";
 import RenderGLTF from "../../basics/RenderGLTF/RenderGLTF";
+import Footer from "../../basics/Footer/Footer";
 // Images
 
 // Imports
 import { useEffect, useState } from "react";
 // Styles
 import s from "./SinglePlanet.module.css";
+
 
 export default function SinglePlanet() {
   const params = new URLSearchParams(window.location.search);
@@ -109,6 +111,7 @@ export default function SinglePlanet() {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 }

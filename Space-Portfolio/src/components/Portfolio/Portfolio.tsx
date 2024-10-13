@@ -8,6 +8,7 @@ import Planets from '../Planets/Planets';
 // Imports
 // Styles
 import s from './Portfolio.module.css'
+import Footer from '../../basics/Footer/Footer';
 
 
 
@@ -18,6 +19,7 @@ export default function Portfolio() {
       <Traveler/>
       <Stars/>
       <Planets/>
+      <Footer/>
     </main>
   );
 }
