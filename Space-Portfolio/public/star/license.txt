@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sun animated test
+* source:	https://sketchfab.com/3d-models/sun-animated-test-8c3ebc78ec014042a61144f46c6f13fa
+* author:	P3TroV (https://sketchfab.com/P3TroV)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sun animated test" (https://sketchfab.com/3d-models/sun-animated-test-8c3ebc78ec014042a61144f46c6f13fa) by P3TroV (https://sketchfab.com/P3TroV) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

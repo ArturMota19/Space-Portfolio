@@ -1,5 +1,5 @@
 // Components
-import GalaxyBg from '../../basics/Galaxy/Galaxy.tsx';
+import RenderGLTF from '../../basics/RenderGLTF/RenderGLTF.tsx';
 // Images
 import Artur from '/public/Artur.jpeg'
 // Imports
@@ -12,7 +12,7 @@ export default function Traveler() {
   return (
     <section className={s.travelerWrapper}>
       <div className={s.internWrapper}>
-        <GalaxyBg/>
+        <RenderGLTF path={'spaceship/scene.gltf'} position={[1, 0, 1.75]} isPlanet={false} />
         <section className={s.wrapperTraveler}>
           <div className={s.travelerInfo}>
             <h2>O Viajante</h2>
